@@ -1,0 +1,7 @@
+# This is a configuration file in standard configuration file format
+#
+# Lines beginning with a hash or a semicolon are ignored by the application
+# program. Blank lines are also ignored by the application program.
+
+# This is the url parameter
+url https://api.tmsandbox.co.nz/v1/Categories/6327/Details.json?catalogue=false

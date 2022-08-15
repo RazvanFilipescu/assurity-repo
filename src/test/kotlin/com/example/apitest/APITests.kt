@@ -1,6 +1,7 @@
 package com.example.apitest
 
 import com.google.gson.GsonBuilder
+import input.reader.HttpInputReader
 import junit.framework.TestCase.assertTrue
 import model.JsonInput
 import org.json.JSONException
@@ -9,7 +10,9 @@ import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import utils.ReadInputUtils
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
@@ -19,11 +22,12 @@ import kotlin.test.assertEquals
 import kotlin.test.assertSame
 
 @SpringBootTest
-class APITests() {
+class APITests {
 
     companion object {
-        var jsonToMap: Map<String, Any> = HashMap()
-        lateinit var testModel: JsonInput
+        private var jsonToMap: Map<String, Any> = HashMap()
+        private lateinit var testModel: JsonInput
+        private val readInputUtils: ReadInputUtils = ReadInputUtils()
 
         /**
          * BeforeAll function for getting the data from the API.
@@ -35,14 +39,8 @@ class APITests() {
         @JvmStatic
         fun `Read the JSON before any test`() {
             // Given
-            // Get response from API
-            val client = HttpClient.newBuilder().build()
-            val request = HttpRequest.newBuilder()
-                .uri(URI.create("https://api.tmsandbox.co.nz/v1/Categories/6327/Details.json?catalogue=false"))
-                .build()
-            // Process response into JSON
-            val response = client.send(request, HttpResponse.BodyHandlers.ofString())
-            val json = response.body().toString()
+            val httpInputReader = HttpInputReader()
+            val json = readInputUtils.readFromApi(httpInputReader)
             // Map JSON into HashMap and Data Class to showcase both possibilities
             // Catch possible JSON conversion error
             try {

@@ -29,14 +29,12 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	// https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+	implementation("org.apache.logging.log4j:log4j-core:2.18.0")
 	// https://mvnrepository.com/artifact/org.springframework/spring-tx
 	implementation("org.springframework:spring-tx:5.3.22")
 	// https://mvnrepository.com/artifact/com.google.code.gson/gson
 	implementation("com.google.code.gson:gson:2.9.1")
-	// https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
-	implementation("org.apache.logging.log4j:log4j-core:2.18.0")
-	compileOnly("org.projectlombok:lombok")
-	annotationProcessor("org.projectlombok:lombok")
 	// https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test-junit
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.7.10")
 	// https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test
