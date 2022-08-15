@@ -25,6 +25,12 @@ class APITests() {
         var jsonToMap: Map<String, Any> = HashMap()
         lateinit var testModel: JsonInput
 
+        /**
+         * BeforeAll function for getting the data from the API.
+         * @return jsonToMap
+         * @return testModel
+         * The 2 data structures map the contents of the JSON in different ways, in order to showcase the possibilities.
+         */
         @BeforeAll
         @JvmStatic
         fun `Read the JSON before any test`() {
@@ -51,6 +57,11 @@ class APITests() {
         }
     }
 
+    /**
+     * First test.
+     * Compares the Name attribute to an expected String value, showcasing the Assertions.assertTrue functionality.
+     * The input is parameterized in the CSV format, in order to allow the easy addition of other, similar test cases.
+     */
     @ParameterizedTest
     @CsvSource(
         "Name, Carbon credits"
@@ -62,6 +73,11 @@ class APITests() {
         Assertions.assertTrue(jsonToMap[attribute].toString() == expected)
     }
 
+    /**
+     * Second test.
+     * Compares the CanRelist attribute to an expected Boolean value, showcasing the Assertions.assertEquals functionality.
+     * The input is parameterized in the CSV format, in order to allow the easy addition of other, similar test cases.
+     */
     @ParameterizedTest
     @CsvSource(
         "CanRelist, true"
@@ -73,18 +89,30 @@ class APITests() {
         Assertions.assertEquals(jsonToMap[attribute], expected.toBoolean())
     }
 
+    /**
+     * Third test.
+     * Finds the nested Promotions/Name attribute based on an input String value, and compares the corresponding
+     * Description to an expected String value, focusing on the Contains functionality.
+     * The input is parameterized in the CSV format, in order to allow the easy addition of other, similar test cases.
+     */
     @ParameterizedTest
     @CsvSource(
         "Gallery, Good position in category"
     )
     fun `Test the Promotions - Gallery element description attribute from JSON`(
-        gallery: String,
+        name: String,
         expected: String
     ) {
         // Given - done in BeforeAll
         // When - not necessary as we perform no actions on the input
         // Then
-        testModel.Promotions.find { promo -> promo.Name == gallery }?.Description?.let { Assertions.assertTrue(it.contains(expected)) }
+        testModel.Promotions.find { promo -> promo.Name == name }?.Description?.let {
+            Assertions.assertTrue(
+                it.contains(
+                    expected
+                )
+            )
+        }
     }
 }
 
