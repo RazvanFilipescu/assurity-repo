@@ -32,7 +32,7 @@
 
 ##### I have chosen to use SpringBoot with Kotlin as a basic framework on which to build my tests. I am also using IntelliJ IDEA as my development IDE. I have done this due to my familiarity with these development tools.
 
-##### The test requirements consist of checking the 3 criteria mentioned in Acceptance Criteria. In order to keep the best practices of having tests as atomic as possible, I have split the testing implementation in 3 separate tests, which can be run individually or together as a suite.
+##### The test requirements consist of checking the 3 criteria mentioned in Acceptance Criteria. In order to keep the best practices of having tests as atomic as possible, I have split the testing implementation in 3 separate tests, which can be run individually or together as a suite (see AllUnitTests test class).
 
 ##### The tests themselves are parameterized in order to easily accommodate a possibly expanding scope, where we want to check other criteria as well.
 

@@ -35,8 +35,7 @@ dependencies {
 	implementation("org.springframework:spring-tx:5.3.22")
 	// https://mvnrepository.com/artifact/com.google.code.gson/gson
 	implementation("com.google.code.gson:gson:2.9.1")
-	// https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test-junit
-	testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.7.10")
+
 	// https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test
 	implementation("org.jetbrains.kotlin:kotlin-test:1.7.10")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
@@ -51,18 +50,28 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
 	implementation("org.apache.logging.log4j:log4j-core:2.18.0")
 
-
-	// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
-	testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
-	// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
-	testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.0")
-
 	// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
 	testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.0")
 	// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
 	testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
+	// https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine
+	testImplementation("org.junit.vintage:junit-vintage-engine:5.9.0")
+	// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-params
+	testImplementation("org.junit.jupiter:junit-jupiter-params:5.9.0")
+	// https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner
+	testImplementation("org.junit.platform:junit-platform-runner:1.9.0")
+
+
 	// https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-serialization-json-jvm
 	runtimeOnly("org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.3.3")
+
+
+	testImplementation(platform("org.junit:junit-bom:5.9.0"))
+	// https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher
+	testImplementation("org.junit.platform:junit-platform-launcher:1.9.0")
+
+	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+	testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
 }
 
 tasks.withType<KotlinCompile> {
