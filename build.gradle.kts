@@ -40,6 +40,25 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test
 	implementation("org.jetbrains.kotlin:kotlin-test:1.7.10")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+	// https://mvnrepository.com/artifact/org.junit.platform/junit-platform-suite-api
+	testImplementation("org.junit.platform:junit-platform-suite-api:1.9.0")
+	// https://mvnrepository.com/artifact/org.junit.platform/junit-platform-suite-engine
+	testImplementation("org.junit.platform:junit-platform-suite-engine:1.9.0")
+	// https://mvnrepository.com/artifact/org.junit.platform/junit-platform-suite-commons
+	runtimeOnly("org.junit.platform:junit-platform-suite-commons:1.9.0")
+
+	// https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+	implementation("org.apache.logging.log4j:log4j-core:2.18.0")
+
+
+	// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+	testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
+	// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
+	testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.0")
+
+	// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
+	testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.0")
 	// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
 	testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
 	// https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-serialization-json-jvm

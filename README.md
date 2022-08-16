@@ -28,7 +28,7 @@
 
 ##### We want to see your best work - no lazy coding or comments.
 
-## Razvans testing approach:
+## Razvan's testing approach:
 
 ##### I have chosen to use SpringBoot with Kotlin as a basic framework on which to build my tests. I am also using IntelliJ IDEA as my development IDE. I have done this due to my familiarity with these development tools.
 
