@@ -10,7 +10,7 @@ import java.net.http.HttpResponse
  * Http reader implementation for InputReader.
  */
 @Component
-class HttpInputReader() : InputReader {
+class HttpInputReader : InputReader {
     override fun readInput(url: String): String {
         val client = HttpClient.newBuilder().build()
         val request = HttpRequest.newBuilder()

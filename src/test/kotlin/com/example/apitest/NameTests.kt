@@ -30,7 +30,7 @@ class NameTests {
     @BeforeAll
     fun `Read the JSON before any test`() {
         val inputReader = HttpInputReader()
-        var json = ""
+        val json: String
         if (this::apiUrl.isInitialized) json = inputReader.readInput(apiUrl)
         else {
             throw Exception("URL not found in application.yml")

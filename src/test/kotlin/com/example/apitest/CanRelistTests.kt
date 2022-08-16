@@ -61,7 +61,7 @@ class CanRelistTests {
         // Given - done in BeforeAll
         // When - not necessary as we perform no actions on the input
         // Then
-        Assertions.assertEquals(jsonToMap[attribute], expected.toBoolean())
+        Assertions.assertEquals(jsonToMap[attribute].toString().toBoolean(), expected.toBoolean())
     }
 }
 
